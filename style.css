@@ -1,0 +1,80 @@
+/* One stylesheet for every page on sift.renobytes.com.
+   No build step and no dependencies: these pages must keep working years from
+   now with nobody maintaining them. */
+:root {
+  --bg: #f7f7f9;
+  --surface: #ffffff;
+  --text: #16161a;
+  --muted: #5b5b66;
+  --tint: #4b3fd4;
+  --rule: #e4e4ea;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #121216;
+    --surface: #1c1c22;
+    --text: #f2f2f5;
+    --muted: #a3a3b0;
+    --tint: #9c93ff;
+    --rule: #2c2c35;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  padding: 3rem 1.25rem 4rem;
+  background: var(--bg);
+  color: var(--text);
+  font: 17px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+main {
+  max-width: 44rem;
+  margin: 0 auto;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: 18px;
+  padding: 2.5rem;
+}
+h1 { font-size: 2rem; line-height: 1.2; margin: 0 0 .35rem; letter-spacing: -.02em; }
+.updated, .tagline { color: var(--muted); margin: 0 0 2rem; }
+.updated { font-size: .9rem; }
+.tagline { font-size: 1.1rem; }
+h2 {
+  font-size: 1.15rem;
+  margin: 2.25rem 0 .6rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+  letter-spacing: -.01em;
+}
+h2:first-of-type { border-top: 0; padding-top: 0; }
+.lede { font-size: 1.05rem; color: var(--muted); margin-bottom: 2rem; }
+ul { padding-left: 1.15rem; }
+li { margin: .4rem 0; }
+strong { font-weight: 650; }
+a { color: var(--tint); }
+.cards { display: grid; gap: .75rem; margin: 1.5rem 0 0; }
+.card {
+  display: block;
+  padding: 1.1rem 1.25rem;
+  border: 1px solid var(--rule);
+  border-radius: 12px;
+  text-decoration: none;
+  color: inherit;
+}
+.card:hover { border-color: var(--tint); }
+.card strong { display: block; color: var(--tint); margin-bottom: .15rem; }
+.card span { color: var(--muted); font-size: .93rem; }
+footer {
+  max-width: 44rem;
+  margin: 1.5rem auto 0;
+  color: var(--muted);
+  font-size: .85rem;
+  text-align: center;
+}
+footer a { color: var(--muted); }
+@media (max-width: 34rem) {
+  body { padding: 1.5rem 1rem 3rem; }
+  main { padding: 1.5rem; border-radius: 14px; }
+  h1 { font-size: 1.6rem; }
+}
